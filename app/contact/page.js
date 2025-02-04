@@ -8,14 +8,14 @@ export const generateMetadata = async ({ params }) => {
             description: "Find detailed course information.",
             url: "https://yourwebsite.com/course",
             type: "website",
-            images: [
-                {
-                    url: "/images/default-course.jpg",
-                    width: 1200,
-                    height: 630,
-                    alt: "Course Image",
-                },
-            ],
+            // images: [
+            //     {
+            //         url: "/images/default-course.jpg",
+            //         width: 1200,
+            //         height: 630,
+            //         alt: "Course Image",
+            //     },
+            // ],
         },
         twitter: {
             card: "summary_large_image",
