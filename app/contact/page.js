@@ -30,6 +30,7 @@ export const generateMetadata = async ({ params }) => {
         const response = await fetch(apiUrl, { cache: "no-store" });
         let data = await response.json();
         data = data.data[0];
+        console.log(data);
 
         if (data) {
             metaData.title = data.MetaTitle || metaData.title;
@@ -39,7 +40,7 @@ export const generateMetadata = async ({ params }) => {
             metaData.openGraph.url = data.Url || metaData.openGraph.url;
             metaData.openGraph.images = [
                 {
-                    url: data.MetaImage || "https://next-q43pzxwvd-mohammad-raazs-projects.vercel.app/images/default-course.jpg",
+                    url: data.Image || "https://next-q43pzxwvd-mohammad-raazs-projects.vercel.app/images/default-course.jpg",
                     width: 1200,
                     height: 630,
                     alt: "Course Image",
@@ -48,7 +49,7 @@ export const generateMetadata = async ({ params }) => {
             metaData.twitter.title = data.MetaTitle || metaData.twitter.title;
             metaData.twitter.description = data.MetaDescription || metaData.twitter.description;
             metaData.twitter.images = [
-                data.MetaImage || "https://next-q43pzxwvd-mohammad-raazs-projects.vercel.app/images/default-course.jpg",
+                data.Image || "https://next-q43pzxwvd-mohammad-raazs-projects.vercel.app/images/default-course.jpg",
             ];
         }
     } catch (error) {
